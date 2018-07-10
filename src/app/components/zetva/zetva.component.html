@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="row">
+        <div class="col md-6 mt-5">
+            <h1 class="text-center">Uputstvo</h1>
+            <p class="mt-5">Molimo Vas popunite polja, zatim kliknite na dugme <b>DALJE</b>.</p>
+            <p>Polja označena sa <b>Količina proizvoda</b> i <b>Cena proizvoda</b> obavezno popuniti da bi dugme proradilo.
+            </p>
+        </div>
+        <div class="col md-6 mt-5">
+            <form (ngSubmit)="onDalje(zetva)" #zetva="ngForm" class="mt-5">
+                <div class="form-group">
+                    <label for="kolicinaGoriva">Količina goriva</label>
+                    <input type="number" name="zetvaKolicinaGoriva" ngModel class="form-control" #zetvaKolicinaGoriva="ngModel">
+                </div>
+                <div class="form-group">
+                    <label for="cenaGoriva">Cena goriva</label>
+                    <input type="number" name="zetvaCenaGoriva" ngModel class="form-control" #zetvaCenaGoriva="ngModel" zetvaKolicinaGoriva>
+                </div>
+                <div class="form-group">
+                    <label for="kombajniranje">Kombajniranje</label>
+                    <input type="number" name="zetvaKombajniranje" ngModel class="form-control" #zetvaKombajniranje="ngModel">
+                </div>
+                <div class="form-group">
+                    <label for="transport">Transport</label>
+                    <input type="number" name="zetvaTransport" ngModel class="form-control" #zetvaTransport="ngModel">
+                </div>
+                <div class="form-group">
+                    <label for="ostaliTroskovi">Ostali Troškovi</label>
+                    <input type="number" name="zetvaOstaliTroskovi" ngModel class="form-control" #zetvaOstaliTroskovi="ngModel">
+                </div>
+                <div class="form-group">
+                    <label for="kolicnaProzivoda">Količina proizvoda</label>
+                    <input type="number" name="zetvaKolicinaProizvoda" ngModel class="form-control" #zetvaKolicinaProizvoda="ngModel" required>
+                    <div class="alert alert-danger" *ngIf="zetvaKolicinaProizvoda.touched && !zetvaKolicinaProizvoda.valid">
+                        Molimo Vas popunite polje Količina proizvoda
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cenaProizvoda">Cena Proizvoda</label>
+                    <input type="number" name="zetvaCenaProizvoda" ngModel class="form-control" #zetvaCenaProizvoda="ngModel" required>
+                    <div class="alert alert-danger" *ngIf="zetvaCenaProizvoda.touched && !zetvaCenaProizvoda.valid">
+                        Molimo Vas popunite polje Cena proizvoda
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-success btn-lg btn-block" value="Dalje" [disabled]=!zetva.valid>
+                </div>
+
+
+            </form>
+
+        </div>
+    </div>
+</div>

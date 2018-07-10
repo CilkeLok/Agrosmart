@@ -1,0 +1,40 @@
+<h1 class="my-5 text-center">
+    Na njivi {{ nazivNjive }} površine {{ povrsinaNjive }} ha kulture {{ nazivKulture }} trošak setve iznosi:
+</h1>
+<table class="table table-dark table-striped table-bordered">
+    <tr>
+        <th scope="col">Vrsta</th>
+        <th scope="col">Količina</th>
+        <th scope="col">Cena</th>
+        <th scope="col">Ukupno</th>
+    </tr>
+    <tr>
+        <td>Seme</td>
+        <td>{{ kolicinaSemena }} kg</td>
+        <td>{{ cenaSemena }} din.</td>
+        <td>{{kolicinaSemena * cenaSemena}} din.</td>
+    </tr>
+    <tr>
+        <td>Gorivo</td>
+        <td>{{ kolicinaGoriva }} l</td>
+        <td>{{ cenaGoriva }} din.</td>
+        <td>{{kolicinaGoriva * cenaGoriva}} din.</td>
+    </tr>
+    <tr>
+        <td>Djubrivo</td>
+        <td>{{ kolicinaDjubriva }} kg</td>
+        <td>{{ cenaDjubriva }} din.</td>
+        <td>{{kolicinaDjubriva * cenaDjubriva}} din.</td>
+    </tr>
+    <tr>
+        <td>Herbicidi</td>
+        <td>{{ kolicinaHerbicida }} l</td>
+        <td>{{ cenaHerbicida }} din.</td>
+        <td>{{kolicinaHerbicida * cenaHerbicida}} din.</td>
+    </tr>
+    <tr>
+        <td colspan="3">Ukupno</td>
+
+        <td colspan="1" class="green">{{ ukupno | number }} din.</td>
+    </tr>
+</table>

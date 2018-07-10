@@ -1,0 +1,111 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+
+            <p>Da bi ste prosledili podatke moraju biti popunjena <b>SVA</b> polja.</p>
+
+
+        </div>
+        <div class="col-md-6">
+            <form (ngSubmit)="onProsledi(forma)" #forma="ngForm">
+                <div class="form-group">
+                    <label for="naziv">Naziv</label>
+                    <input type="text" placeholder="Naziv njive" class="form-control" ngModel name="nazivNjive" #nazivNjive="ngModel" required>
+                    <div class="alert alert-danger" *ngIf="nazivNjive.touched && !nazivNjive.valid">
+                        Molimo Vas popunite SVA polja
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="kultura">Naziv kulture</label>
+                    <input type="text" placeholder="Naziv kulture" class="form-control" ngModel name="nazivKulture" #nazivKulture="ngModel" required>
+                    <div class="alert alert-danger" *ngIf="nazivKulture.touched && !nazivKulture.valid">
+                        Molimo Vas popunite SVA polja
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="velicina njive">Površina njive</label>
+                    <input type="number" placeholder="Površina njive u ha" class="form-control" ngModel name="povrsinaNjive" #povrsinaNjive="ngModel" required>
+                    <div class="alert alert-danger" *ngIf="povrsinaNjive.touched && !povrsinaNjive.valid">
+                        Molimo Vas popunite SVA polja
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                            <label for="kolicina semena">Količina semena</label>
+                            <input type="number" placeholder="Količina semena" class="form-control" ngModel name="kolicinaSemena" #kolicinaSemena="ngModel" required>
+                            <div class="alert alert-danger" *ngIf="kolicinaSemena.touched && !kolicinaSemena.valid">
+                                Molimo Vas popunite SVA polja
+                            </div>
+                        </div>
+                        <div class="col">
+                            <label for="cena semena">Cena semena</label>
+                            <input type="number" placeholder="Cena semena" class="form-control" ngModel name="cenaSemena" #cenaSemena="ngModel" required>
+                            <div class="alert alert-danger" *ngIf="cenaSemena.touched && !cenaSemena.valid">
+                                Molimo Vas popunite SVA polja
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                            <label for="kolicina goriva">Količina goriva</label>
+                            <input type="number" placeholder="Količina goriva" class="form-control" ngModel name="kolicinaGoriva" #kolicinaGoriva="ngModel" required>
+                            <div class="alert alert-danger" *ngIf="kolicinaGoriva.touched && !kolicinaGoriva.valid">
+                                Molimo Vas popunite SVA polja
+                            </div>
+                        </div>
+                        <div class="col">
+                            <label for="cena goriva">Cena goriva</label>
+                            <input type="number" placeholder="Cena goriva" class="form-control" ngModel name="cenaGoriva" #cenaGoriva="ngModel" required>
+                            <div class="alert alert-danger" *ngIf="cenaGoriva.touched && !cenaGoriva.valid">
+                                Molimo Vas popunite SVA polja
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                            <label for="kolicina djubriva">Količina djubriva</label>
+                            <input type="number" placeholder="Količina djubriva" class="form-control" ngModel name="kolicinaDjubriva" #kolicinaDjubriva="ngModel" required>
+                            <div class="alert alert-danger" *ngIf="kolicinaDjubriva.touched && !kolicinaDjubriva.valid">
+                                Molimo Vas popunite SVA polja
+                            </div>
+                        </div>
+                        <div class="col">
+                            <label for="cena djubriva">Cena djubriva</label>
+                            <input type="number" placeholder="Cena djubriva" class="form-control" ngModel name="cenaDjubriva" #cenaDjubriva="ngModel" required>
+                            <div class="alert alert-danger" *ngIf="cenaDjubriva.touched && !cenaDjubriva.valid">
+                                Molimo Vas popunite SVA polja
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                            <label for="kolicina herbicida">Količina herbicida</label>
+                            <input type="number" placeholder="Količina herbicida" class="form-control" ngModel name="kolicinaHerbicida" #kolicinaHerbicida="ngModel" required>
+                            <div class="alert alert-danger" *ngIf="kolicinaHerbicida.touched && !kolicinaHerbicida.valid">
+                                Molimo Vas popunite SVA polja
+                            </div>
+                        </div>
+                        <div class="col">
+                            <label for="cena herbicida">Cena herbicida</label>
+                            <input type="number" placeholder="Cena herbicida" class="form-control" ngModel name="cenaHerbicida" #cenaHerbicida="ngModel" required>
+                            <div class="alert alert-danger" *ngIf="cenaHerbicida.touched && !cenaHerbicida.valid">
+                                Molimo Vas popunite SVA polja
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-success btn-lg btn-block" value="Prosledi" [disabled]=!forma.valid>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

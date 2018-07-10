@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">Agrosmart</a>
+        <ng-template [ngIf]="autentifikacijaService.prijavljen()">
+            <ul class="navbar-nav m-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/">Početna</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/setva">Setva</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/prikaz">Prikaz</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/zetva">Žetva</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/zarada">Zarada</a>
+                </li>
+            </ul>
+
+            <ul class="navbar nav ml-auto">
+                <li class="nav-item">
+                    <a style="cursor: pointer" (click)="odjaviSe()" class="text-danger">Odjava</a>
+                </li>
+            </ul>
+        </ng-template>
+        <ng-template [ngIf]="!autentifikacijaService.prijavljen()">
+            <ul class="navbar nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/logovanje">Prijava</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/registracija">Registracija</a>
+                </li>
+            </ul>
+        </ng-template>
+
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

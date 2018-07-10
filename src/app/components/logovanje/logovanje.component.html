@@ -1,0 +1,26 @@
+<div class="container mt-5 ml-5">
+    <div class="row mt-5 ml-5">
+        <div class="col mt-5 ml-5">
+            <form (ngSubmit)="prijaviSe(f)" #f="ngForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" ngModel class="form-control" #email="ngModel" required email>
+                    <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+                        Molimo Vas unesite vašu email adresu
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="sifra">Šifra</label>
+                    <input type="password" id="sifra" name="sifra" ngModel class="form-control" #sifra="ngModel" required minlength="6">
+                    <div class="alert alert-danger" *ngIf="sifra.touched && !sifra.valid">
+                        Šifra mora biti minimalno 6 karaktera duga
+                    </div>
+                </div>
+                <button class="btn btn-success" type="submit" [disabled]=!f.valid>Prijavi se</button>
+
+            </form>
+
+        </div>
+
+    </div>
+</div>
